@@ -241,7 +241,7 @@ for key, url_list in urls_dict.items():
                 df = pd.concat([df, df_row])
                 df_index += 1
 
-                Download the book frontpage image (if it's exists)
+                # Download the book frontpage image (if it's exists)
                 image = soup.find("div", class_="imagen")
                 try:
                     response = requests.get(image.find("img")["data-src"])
@@ -253,8 +253,6 @@ for key, url_list in urls_dict.items():
                     response = requests.get(image.find("img")["src"])
                     complete_name = os.path.join(save_path, str(isbn)+".jpg")
                     file = open(complete_name, "wb")
-
-
 
             except:
                 pass
