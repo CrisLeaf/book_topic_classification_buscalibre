@@ -104,10 +104,10 @@ urls_dict = {
         "https://www.buscalibre.cl/libros-envio-24-horas-con-descuento-cl_t.html?page=17"
     ]
 }
-str_regex = r"[A-Z]*[a-z]+[ñ]*[a-z]*[áéíóú]*[a-z]*[ ]?[A-Z]*[a-z]*[ñ]*[a-z]*[áéíóú]*[a-z]*[ ]?[A-Z]*[a-z]*[ñ]*[a-z]*[áéíóú]*[a-z]*[ ]?"
-num1_regex = r"[0-9]+"
-num2_regex = r"[0-9]+[0-9]+"
-num9_regex = r"[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+"
+str_regex = r"[A-Z]*[a-z]+[ñ]*[a-z]*[áéíóú]*[a-z]*[ ]?[A-Z]*[a-z]*[ñ]*[a-z]*[áéíóú]*[a-z]*[ ]?[A-Z]*[a-z]*[ñ]*[a-z]*[áéíóú]*[a-z]*[ ]?"     # for strings
+num1_regex = r"[0-9]+"      # for pages
+num2_regex = r"[0-9]+[0-9]+"        # for year
+num9_regex = r"[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+"      # for isbn
 df = pd.DataFrame(columns=[
     "isbn", "name", "author", "publisher", "year", "language", "pages", "category", "format",
     "review", "price", "url", "topic"
