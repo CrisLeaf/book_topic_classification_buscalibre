@@ -6,7 +6,7 @@ import re
 import numpy as np
 import csv
 
-path_folder = "C:/Users/Cristobal-PC/Documents/Python/Projects/Project1/"
+path_folder = ".../Project/"
 
 # ------------------------------------------------------------------------------------------------
 # Initial definitions
