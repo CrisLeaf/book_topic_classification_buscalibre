@@ -184,6 +184,7 @@ for key, url_list in urls_dict.items():
 
         # Iterate over each book of an specific page
         for link in links:
+            # There are some books with no information, so we need the try command
             try:
                 # Get the soup for a single book
                 book_page = requests.get(link)
