@@ -246,13 +246,13 @@ for key, url_list in urls_dict.items():
                 try:
                     response = requests.get(image.find("img")["data-src"])
                     complete_name = os.path.join(save_path, str(isbn)+".jpg")
-                    file = open(complete_name, "wb")
-                    file.write(response.content)
-                    file.close()
+                    with open(complete_name, "wb") as file:
+                        file.write(response.content)
                 except:
                     response = requests.get(image.find("img")["src"])
                     complete_name = os.path.join(save_path, str(isbn)+".jpg")
-                    file = open(complete_name, "wb")
+                    with open(complete_name, "wb") as file:
+                        file.write(response.content)
 
             except:
                 pass
