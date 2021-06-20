@@ -177,10 +177,8 @@ for key, url_list in urls_dict.items():
         productos = soup.find_all("div", class_="producto")
 
         # Get the book links for an specific page
-        links = []
-        for i in productos:
-            links.append(i.find("a", href=True)["href"])
-
+        links = [i.find("a", href=True)["href"] for i in productos]
+        
         # Iterate over each book of an specific page
         for link in links:
             # There are some books with no information, so we need the try command
