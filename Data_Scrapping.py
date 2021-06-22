@@ -255,6 +255,18 @@ for key, url_list in urls_dict.items():
             except:
                 pass
 
+# We are droping category columns for posible leakage (in predicting the topic of a book)
+df = df.drop(columns="category")
+
+# Splitting the dataset into train and test
+# Eventually this will create a random split, so any data analysis could be something different
+idx = np.random.randint(0, 3564, 700)
+train = df.drop(axis=0, labels=idx)
+test = df.iloc[idx, :]
+train = train.reset_index(drop=True)
+test = test.reset_index(drop=True)
+
 # CSV write
-csv_path = path_folder + "buscalibre_data.csv"
-df.to_csv(csv_path, index=False)
+train.to_csv(path_folder + "train.csv", index=False)
+test.to_csv(path_folder + "test.csv", index=False)
+
